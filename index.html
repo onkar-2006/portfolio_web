@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onkar Kshirsagar | AI Portfolio</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="container">
+        <header class="section-hero">
+            <div class="bento-card profile-info">
+                <span class="badge">AI Engineer</span>
+                <h1>Onkar <span class="accent">Kshirsagar</span></h1>
+                <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=2196F3&center=false&vCenter=true&width=435&lines=LLM+%26+Generative+AI+Specialist;Full+Stack+AI+Developer" alt="Typing SVG" />
+                
+                <div class="social-strip">
+                    <a href="https://github.com/onkar-2006" target="_blank" title="GitHub"><i data-lucide="github"></i></a>
+                    <a href="https://linkedin.com/in/onkar-kshirsagar-19a4a8298/" target="_blank" title="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="https://leetcode.com/u/onkar_300/" target="_blank" class="leetcode-btn" title="LeetCode"><i data-lucide="code-2"></i> LeetCode Profile</a>
+                    <a href="mailto:kshirsagaronkar987@gmail.com" title="Email"><i data-lucide="mail"></i></a>
+                </div>
+            </div>
+        </header>
+
+        <h2 class="section-title"><i data-lucide="cpu"></i> Technical Expertise</h2>
+        <section class="skill-matrix">
+            <div class="bento-card skill-group">
+                <h3>GenAI & Agents</h3>
+                <div class="pill-container">
+                    <span class="pill gold">LangGraph</span><span class="pill gold">LangChain</span>
+                    <span class="pill highlight">FastMCP</span><span class="pill">RAG</span><span class="pill">HuggingFace</span>
+                </div>
+            </div>
+            <div class="bento-card skill-group">
+                <h3>Machine Learning</h3>
+                <div class="pill-container">
+                    <span class="pill blue">PyTorch</span><span class="pill blue">TensorFlow</span>
+                    <span class="pill">Scikit-Learn</span><span class="pill">Pandas</span><span class="pill">NumPy</span>
+                </div>
+            </div>
+            <div class="bento-card skill-group">
+                <h3>Backend & Core</h3>
+                <div class="pill-container">
+                    <span class="pill green">FastAPI</span><span class="pill green">SQLAlchemy</span>
+                    <span class="pill">Docker</span><span class="pill">MySQL</span><span class="pill">React</span>
+                </div>
+            </div>
+        </section>
+
+        <h2 class="section-title"><i data-lucide="layers"></i> Featured Projects</h2>
+        <section class="project-gallery">
+            <div class="project-item" onclick="openProj('agentic-v2')">
+                <div class="proj-content">
+                    <div class="proj-tag">Agentic AI</div>
+                    <h3>Agentic AI v2.0</h3>
+                    <p>Multi-step reasoning agents with real-time token streaming.</p>
+                    <button class="view-btn">View Demo & Details <i data-lucide="arrow-right"></i></button>
+                </div>
+            </div>
+            <div class="project-item" onclick="openProj('smart-commerce')">
+                <div class="proj-content">
+                    <div class="proj-tag">E-Commerce</div>
+                    <h3>SmartCommerce AI</h3>
+                    <p>Intelligent support system with automated human handoff logic.</p>
+                    <button class="view-btn">View Demo & Details <i data-lucide="arrow-right"></i></button>
+                </div>
+            </div>
+            <div class="project-item" onclick="openProj('data-oracle')">
+                <div class="proj-content">
+                    <div class="proj-tag">Healthcare</div>
+                    <h3>DataOracle AI</h3>
+                    <p>Autonomous clinical data auditing and executive reporting agents.</p>
+                    <button class="view-btn">View Demo & Details <i data-lucide="arrow-right"></i></button>
+                </div>
+            </div>
+            <div class="project-item" onclick="openProj('diabetes')">
+                <div class="proj-content">
+                    <div class="proj-tag">ML Pipeline</div>
+                    <h3>Diabetes Predict</h3>
+                    <p>End-to-end production ML pipeline containerized with Docker.</p>
+                    <button class="view-btn">View Demo & Details <i data-lucide="arrow-right"></i></button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeProj()">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
