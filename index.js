@@ -5,6 +5,8 @@ const projectDetails = {
         title: "Agentic AI v2.0",
         description: "An advanced LLM orchestration platform utilizing LangGraph to build multi-step, stateful reasoning agents that go beyond basic chat interactions.",
         video: "https://github.com/onkar-2006/portfolio_web/raw/refs/heads/main/assets/chatgpt_project.mp4", 
+        // Update these links to your actual repository URLs
+        github: "https://github.com/onkar-2006/Agentic-AI-v2", 
         tech: ["LangGraph", "FastAPI", "React", "SQLAlchemy", "MySQL"],
         features: [
             "<strong>Graph Orchestration:</strong> Complex task breakdown via LangGraph state machines.",
@@ -16,6 +18,7 @@ const projectDetails = {
         title: "SmartCommerce AI",
         description: "An AI-driven support system designed to handle e-commerce queries, inventory checks, and seamless human agent handoffs.",
         video: "https://github.com/onkar-2006/portfolio_web/raw/refs/heads/main/assets/customer_support_project.mp4", 
+        github: "https://github.com/onkar-2006/SmartCommerce-AI",
         tech: ["FastMCP", "Groq", "LangGraph", "SQLAlchemy", "MySQL"],
         features: [
             "<strong>Sentiment Handoff:</strong> Automatically detects customer frustration and routes to human support.",
@@ -27,6 +30,7 @@ const projectDetails = {
         title: "DataOracle AI",
         description: "A specialized multi-agent system for healthcare that audits clinical datasets and generates structured executive reports.",
         video: "https://github.com/onkar-2006/portfolio_web/raw/refs/heads/main/assets/data_analyser_project.mp4",
+        github: "https://github.com/onkar-2006/DataOracle-AI",
         tech: ["FastAPI", "Pandas", "Llama 3.3", "FPDF", "Matplotlib"],
         features: [
             "<strong>Autonomous Auditing:</strong> Scans CSV data for clinical anomalies and health-score shifts.",
@@ -38,6 +42,7 @@ const projectDetails = {
         title: "Diabetes Predict",
         description: "A full-stack machine learning solution for clinical diabetes prediction, deployed as a containerized service.",
         video: "https://github.com/onkar-2006/portfolio_web/raw/refs/heads/main/assets/diabetes_project.mp4", 
+        github: "https://github.com/onkar-2006/Diabetes-Predict",
         tech: ["Scikit-Learn", "Docker", "FastAPI", "Streamlit", "Python"],
         features: [
             "<strong>Production Pipeline:</strong> End-to-end ML workflow from data scaling to API inference.",
@@ -50,7 +55,6 @@ const projectDetails = {
 function openProj(id) {
     const data = projectDetails[id];
     
-    // SOUND FIX: Removed 'muted' attribute so sound plays by default
     document.getElementById('modal-body').innerHTML = `
         <h1 style="margin:0; color:var(--accent)">${data.title}</h1>
         <p style="color:#888; margin: 15px 0; font-size: 1.1rem;">${data.description}</p>
@@ -69,21 +73,23 @@ function openProj(id) {
         </ul>
 
         <div style="margin-top:30px;">
-            <a href="https://github.com/onkar-2006" target="_blank" class="view-btn" style="text-decoration:none;">View Github Repo</a>
+            <a href="${data.github}" target="_blank" class="view-btn" style="text-decoration:none; display: inline-flex; align-items: center; gap: 8px;">
+                <i data-lucide="github" style="width:18px;"></i> View Github Repo
+            </a>
         </div>
     `;
+    // Re-render icons for the new button inside the modal
+    lucide.createIcons();
     document.getElementById('modal').style.display = 'flex';
 }
 
 function closeProj() { 
-    // Stop video when closing modal
     const video = document.querySelector('#modal-body video');
     if(video) video.pause();
     document.getElementById('modal').style.display = 'none'; 
 }
 
 // --- DEEP LINKING LOGIC ---
-// This allows links like yoursite.com/?project=agentic-v2 to open the modal automatically
 window.addEventListener('load', () => {
     const urlParams = new URLSearchParams(window.location.search);
     const projectId = urlParams.get('project');
