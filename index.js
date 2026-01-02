@@ -6,7 +6,7 @@ const projectDetails = {
         description: "An advanced LLM orchestration platform utilizing LangGraph to build multi-step, stateful reasoning agents that go beyond basic chat interactions.",
         video: "https://github.com/onkar-2006/portfolio_web/raw/refs/heads/main/assets/chatgpt_project.mp4", 
         // Update these links to your actual repository URLs
-        github: "https://github.com/onkar-2006/Agentic-AI-v2", 
+        github: "https://github.com/onkar-2006/ChatGPT_Agent_v2", 
         tech: ["LangGraph", "FastAPI", "React", "SQLAlchemy", "MySQL"],
         features: [
             "<strong>Graph Orchestration:</strong> Complex task breakdown via LangGraph state machines.",
@@ -18,7 +18,7 @@ const projectDetails = {
         title: "SmartCommerce AI",
         description: "An AI-driven support system designed to handle e-commerce queries, inventory checks, and seamless human agent handoffs.",
         video: "https://github.com/onkar-2006/portfolio_web/raw/refs/heads/main/assets/customer_support_project.mp4", 
-        github: "https://github.com/onkar-2006/SmartCommerce-AI",
+        github: "https://github.com/onkar-2006/AI_DESK",
         tech: ["FastMCP", "Groq", "LangGraph", "SQLAlchemy", "MySQL"],
         features: [
             "<strong>Sentiment Handoff:</strong> Automatically detects customer frustration and routes to human support.",
@@ -30,7 +30,7 @@ const projectDetails = {
         title: "DataOracle AI",
         description: "A specialized multi-agent system for healthcare that audits clinical datasets and generates structured executive reports.",
         video: "https://github.com/onkar-2006/portfolio_web/raw/refs/heads/main/assets/data_analyser_project.mp4",
-        github: "https://github.com/onkar-2006/DataOracle-AI",
+        github: "https://github.com/onkar-2006/Data_Analyzer",
         tech: ["FastAPI", "Pandas", "Llama 3.3", "FPDF", "Matplotlib"],
         features: [
             "<strong>Autonomous Auditing:</strong> Scans CSV data for clinical anomalies and health-score shifts.",
@@ -42,7 +42,7 @@ const projectDetails = {
         title: "Diabetes Predict",
         description: "A full-stack machine learning solution for clinical diabetes prediction, deployed as a containerized service.",
         video: "https://github.com/onkar-2006/portfolio_web/raw/refs/heads/main/assets/diabetes_project.mp4", 
-        github: "https://github.com/onkar-2006/Diabetes-Predict",
+        github: "https://github.com/onkar-2006/Diabetes_prediction_project",
         tech: ["Scikit-Learn", "Docker", "FastAPI", "Streamlit", "Python"],
         features: [
             "<strong>Production Pipeline:</strong> End-to-end ML workflow from data scaling to API inference.",
