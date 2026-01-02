@@ -4,7 +4,7 @@ const projectDetails = {
     'agentic-v2': {
         title: "Agentic AI v2.0",
         description: "An advanced LLM orchestration platform utilizing LangGraph to build multi-step, stateful reasoning agents that go beyond basic chat interactions.",
-        video: "LINK_TO_VIDEO_1.mp4", // Replace with your video link
+        video: "https://github.com/onkar-2006/portfolio_web/raw/refs/heads/main/assets/chatgpt_project.mp4", 
         tech: ["LangGraph", "FastAPI", "React", "SQLAlchemy", "MySQL"],
         features: [
             "<strong>Graph Orchestration:</strong> Complex task breakdown via LangGraph state machines.",
@@ -15,7 +15,7 @@ const projectDetails = {
     'smart-commerce': {
         title: "SmartCommerce AI",
         description: "An AI-driven support system designed to handle e-commerce queries, inventory checks, and seamless human agent handoffs.",
-        video: "LINK_TO_VIDEO_2.mp4", // Replace with your video link
+        video: "https://github.com/onkar-2006/portfolio_web/raw/refs/heads/main/assets/customer_support_project.mp4", 
         tech: ["FastMCP", "Groq", "LangGraph", "SQLAlchemy", "MySQL"],
         features: [
             "<strong>Sentiment Handoff:</strong> Automatically detects customer frustration and routes to human support.",
@@ -26,7 +26,7 @@ const projectDetails = {
     'data-oracle': {
         title: "DataOracle AI",
         description: "A specialized multi-agent system for healthcare that audits clinical datasets and generates structured executive reports.",
-        video: "LINK_TO_VIDEO_3.mp4", // Replace with your video link
+        video: "https://github.com/onkar-2006/portfolio_web/raw/refs/heads/main/assets/data_analyser_project.mp4",
         tech: ["FastAPI", "Pandas", "Llama 3.3", "FPDF", "Matplotlib"],
         features: [
             "<strong>Autonomous Auditing:</strong> Scans CSV data for clinical anomalies and health-score shifts.",
@@ -37,7 +37,7 @@ const projectDetails = {
     'diabetes': {
         title: "Diabetes Predict",
         description: "A full-stack machine learning solution for clinical diabetes prediction, deployed as a containerized service.",
-        video: "LINK_TO_VIDEO_4.mp4", // Replace with your video link
+        video: "https://github.com/onkar-2006/portfolio_web/raw/refs/heads/main/assets/diabetes_project.mp4", 
         tech: ["Scikit-Learn", "Docker", "FastAPI", "Streamlit", "Python"],
         features: [
             "<strong>Production Pipeline:</strong> End-to-end ML workflow from data scaling to API inference.",
@@ -49,6 +49,8 @@ const projectDetails = {
 
 function openProj(id) {
     const data = projectDetails[id];
+    
+    // SOUND FIX: Removed 'muted' attribute so sound plays by default
     document.getElementById('modal-body').innerHTML = `
         <h1 style="margin:0; color:var(--accent)">${data.title}</h1>
         <p style="color:#888; margin: 15px 0; font-size: 1.1rem;">${data.description}</p>
@@ -57,7 +59,7 @@ function openProj(id) {
             ${data.tech.map(t => `<span class="pill">${t}</span>`).join('')}
         </div>
         
-        <video controls autoplay muted style="width:100%; border-radius:15px; border:1px solid #333; margin: 20px 0;">
+        <video controls autoplay style="width:100%; border-radius:15px; border:1px solid #333; margin: 20px 0;">
             <source src="${data.video}" type="video/mp4">
         </video>
         
@@ -73,4 +75,22 @@ function openProj(id) {
     document.getElementById('modal').style.display = 'flex';
 }
 
-function closeProj() { document.getElementById('modal').style.display = 'none'; }
+function closeProj() { 
+    // Stop video when closing modal
+    const video = document.querySelector('#modal-body video');
+    if(video) video.pause();
+    document.getElementById('modal').style.display = 'none'; 
+}
+
+// --- DEEP LINKING LOGIC ---
+// This allows links like yoursite.com/?project=agentic-v2 to open the modal automatically
+window.addEventListener('load', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const projectId = urlParams.get('project');
+
+    if (projectId && projectDetails[projectId]) {
+        setTimeout(() => {
+            openProj(projectId);
+        }, 500); 
+    }
+});
